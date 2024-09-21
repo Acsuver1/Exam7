@@ -71,7 +71,7 @@ const RouteController = () => {
       ),
     },
     {
-      path: "/single",
+      path: "/single/:id",
       element: (
         <SuspenseWithDelay>
           <SinglePage />
@@ -81,6 +81,13 @@ const RouteController = () => {
     {
       path: "*",
       element: <div>404 - Not Found</div>,
+      errorElement: <div>404 - Not Found</div>,
+      loader: () => {
+        throw new Response("", {
+          status: 404,
+          statusText: "Not Found",
+        });
+      },
     },
   ]);
 };

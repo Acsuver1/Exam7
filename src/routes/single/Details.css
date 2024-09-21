@@ -1,0 +1,76 @@
+/* Global gradient background with animation */
+body {
+  background: linear-gradient(270deg, #d8d0e1, #2575fc, #d8d0e1);
+  background-size: 300% 300%;
+  animation: gradientBackground 4s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Gradient background animation keyframes */
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom card styling */
+.custom-card {
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect on the card */
+.custom-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Media (Image) Styling */
+.user-avatar {
+  height: 300px;
+  object-fit: cover;
+  filter: grayscale(50%);
+  transition: filter 0.3s ease;
+}
+
+.user-avatar:hover {
+  filter: grayscale(0%);
+}
+
+/* Typography hover and active animations */
+.MuiTypography-root:hover {
+  color: #6ef5ff;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.MuiTypography-root:active {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .custom-card {
+    max-width: 100%;
+    margin: 20px;
+  }
+
+  .user-avatar {
+    height: 200px;
+  }
+}

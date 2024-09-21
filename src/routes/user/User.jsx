@@ -22,7 +22,7 @@ const User = () => {
 
   const handleDelete = (id) => {
     deleteUser(id);
-    toast.success('User deleted successfully!');
+    toast.success('User deleted successfully! 🥶');
   };
 
   const updateLocalStorage = (newLikes) => {
@@ -36,7 +36,7 @@ const User = () => {
     };
     setLikes(newLikes);
     updateLocalStorage(newLikes);
-    toast.success(newLikes[userId] ? 'You liked this user!' : 'You unliked this user!');
+    toast.success(newLikes[userId] ? 'You liked this user!' : 'You unliked this user 😒!');
   };
 
   const handleCreateUser = () => {

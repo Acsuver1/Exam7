@@ -2,23 +2,24 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useDetailsQuery } from "../../redux/api/userApi";
 import { Container, Typography, Card, CardContent, CardMedia } from '@mui/material';
+import './Details.css'; 
 
 const Details = () => {
-  const { id } = useParams(); 
-  const { data, error, isLoading } = useDetailsQuery(id); 
+  const { id } = useParams();
+  const { data, error, isLoading } = useDetailsQuery(id);
 
   if (isLoading) return <Typography>Loading...</Typography>;
   if (error) return <Typography>Error loading user details</Typography>;
   if (!data) return <Typography>User not found</Typography>;
 
-  const user = data.data; // Assuming the response contains the user object directly
+  const user = data.data;
 
   return (
-    <Container sx={{ marginTop: 5 }}>
-      <Card sx={{ maxWidth: 600, margin: 'auto', boxShadow: 3 }}>
+    <Container className="user-container" sx={{ marginTop: 5 }}>
+      <Card className="custom-card" sx={{ maxWidth: 400, margin: 'auto' }}>
         <CardMedia
           component="img"
-          height="300"
+          className="user-avatar"
           image={user.avatar}
           alt={`${user.first_name} ${user.last_name}`}
         />
@@ -30,7 +31,16 @@ const Details = () => {
             Email: {user.email}
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
-            Job: {user.job} {/* Assuming job is part of the user object */}
+            Job: {user.job || 'Not specified'}
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
+            Likes: {user.likes || 'Not specified'}
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
+            Dislikes: {user.dislikes || 'Not specified'}
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
+            Registration Date: {new Date(user.registration_date).toLocaleDateString()}
           </Typography>
         </CardContent>
       </Card>
