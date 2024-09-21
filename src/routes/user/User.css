@@ -1,0 +1,91 @@
+/* User.css */
+
+body {
+    background: linear-gradient(270deg, #d8d0e1, #2575fc, #d8d0e1);
+    background-size: 300% 300%;
+    animation: gradientAnimation 3.9s ease infinite; 
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .TableContainer {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .MuiTableCell-root {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .MuiTableRow-root {
+    transition: background-color 0.3s;
+  }
+  
+  .MuiTableRow-root:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .MuiButton-contained {
+    background-color: #00aaff;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .MuiButton-contained:hover {
+    background-color: #0077cc;
+    transform: scale(1.05);
+  }
+  
+  .MuiButton-contained:active {
+    background-color: #005999;
+    transform: scale(0.95);
+  }
+  
+  .icon-button {
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  .icon-button:hover {
+    color: #00aaff;
+  }
+  
+  .table-header {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+  
+  .table-header .MuiTableCell-root {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .icon-button {
+    transition: background-color 0.3s ease;
+  }
+  
+  .icon-button:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Slight background change on hover */
+  }
+  .icon-button {
+    transition: background-color 0.3s ease;
+  }
+  
+  .icon-button:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Add a subtle background on hover */
+  }
+  
