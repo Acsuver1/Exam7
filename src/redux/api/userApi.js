@@ -7,12 +7,14 @@ const usersApi = api.injectEndpoints({
             url: "users?page=2",
             method: "GET"
          }),
+         providesTags: ["USERS"],
       }),
       userDelete: build.mutation({
          query: (id) => ({
             url: `users/${id}`,
             method: "DELETE",
          }),
+         invalidatesTags: ["USERS"],
       }),
       userCreate: build.mutation({
          query: (body) => ({
@@ -20,12 +22,14 @@ const usersApi = api.injectEndpoints({
             method: "POST",
             body,
          }),
+         invalidatesTags: ["USERS"],
       }),
          details: build.query({
             query: (id) => ({
                url: `users/${id}`,
                method: "GET",
             }),
+            providesTags: ["USERS"],
          }),
    }),
 });
